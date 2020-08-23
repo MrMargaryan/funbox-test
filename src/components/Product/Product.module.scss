@@ -50,10 +50,6 @@
 }
 
 .productContent {
-  text-overflow: ellipsis;
-  white-space: nowrap;
-  overflow: hidden;
-
   position: absolute;
   top: 4px;
   right: 4px;
@@ -85,7 +81,7 @@
 
 .disabledContent {
   color: $disabled-gray !important;
-  opacity: 50%;
+  opacity: 0.5;
 }
 
 .subtitle {
