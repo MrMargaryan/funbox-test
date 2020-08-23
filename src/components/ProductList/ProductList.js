@@ -18,7 +18,7 @@ const ProductList = () => {
       />
       <Product
         initialStatus="active"
-        type="с рыбой"
+        type="C рыбой"
         benefits={['40 порций', '2 мыши в подарок']}
         weight="2"
         description={[
@@ -28,7 +28,7 @@ const ProductList = () => {
       />
       <Product
         initialStatus="disabled"
-        type="с курой"
+        type="C курой"
         benefits={['100 порций', '5 мышей в подарок', 'заказчик доволен']}
         weight="5"
         description={[
