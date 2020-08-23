@@ -1,0 +1,175 @@
+@import '../../variables';
+
+.default {
+  background-color: $default-blue;
+
+  &:hover,
+  &:hover .weightWrapper {
+    background-color: $default-blue-hover;
+  }
+}
+
+.active {
+  background-color: $active-red;
+
+  &:hover,
+  &:hover .weightWrapper {
+    background-color: $active-red-hover;
+  }
+}
+
+.disabled {
+  background-color: $disabled-gray;
+
+  pointer-events: none;
+}
+
+.productWrapper {
+  width: 90%;
+  max-width: 320px;
+  margin-bottom: 20px;
+
+  font-family: 'Trebuchet MS', sans-serif;
+
+  @media (min-width: 640px) {
+    margin-right: 40px;
+    margin-left: 40px;
+  }
+}
+
+.productBorder {
+  position: relative;
+
+  height: 480px;
+  margin-bottom: 15px;
+
+  border-radius: 12px;
+
+  clip-path: polygon(16% 0, 100% 0, 100% 50%, 100% 100%, 0 100%, 0 10%);
+  cursor: pointer;
+}
+
+.productContent {
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+
+  position: absolute;
+  top: 4px;
+  right: 4px;
+  bottom: 4px;
+  left: 4px;
+
+  padding-top: 20px;
+  padding-left: 46px;
+
+  color: #666666;
+
+  background-image: url('../../images/cat.png');
+  background-repeat: no-repeat;
+  background-position-x: -30px;
+  background-position-y: 204px;
+  background-color: #f2f2f2;
+  border-radius: 12px;
+
+  clip-path: polygon(16% 0, 100% 0, 100% 50%, 100% 100%, 0 100%, 0 10%);
+
+  &Disabled {
+    background-image: linear-gradient(
+        rgba(242, 242, 242, 0.5),
+        rgba(242, 242, 242, 0.5)
+      ),
+      url('../../images/cat.png');
+  }
+}
+
+.disabledContent {
+  color: $disabled-gray !important;
+  opacity: 50%;
+}
+
+.subtitle {
+  margin-bottom: 17px;
+
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+
+  &Active {
+    color: $active-red-hover;
+  }
+}
+
+.title {
+  margin-bottom: 10px;
+
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+
+  font-size: 48px;
+  line-height: 35px;
+  color: #000000;
+}
+
+.type {
+  font-size: 24px;
+  text-transform: lowercase;
+}
+
+.benefits {
+  font-size: 14px;
+}
+
+.benefitsItem {
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.benefitQty {
+  font-weight: 900;
+}
+
+.weightWrapper {
+  position: absolute;
+  right: 12px;
+  bottom: 12px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  width: 80px;
+  height: 80px;
+
+  color: #ffffff;
+
+  border-radius: 50%;
+}
+
+.weight {
+  font-size: 42px;
+}
+
+.kilogram {
+  font-size: 21px;
+  text-transform: lowercase;
+}
+
+.action {
+  font-size: 13px;
+  text-align: center;
+}
+
+.actionDisabled {
+  color: #ffff66;
+}
+
+.buyText {
+  color: $default-blue;
+  border-bottom: 1px dashed $default-blue;
+
+  cursor: pointer;
+}

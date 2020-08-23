@@ -1,0 +1,28 @@
+.sectionProducts {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-self: center;
+
+  width: 100%;
+  height: 100%;
+
+  @media (min-width: 1200px) {
+    position: absolute;
+    top: 50%;
+    transform: translate(0, -50%);
+  }
+}
+
+.title {
+  margin-bottom: 30px;
+
+  font-size: 36px;
+  text-align: center;
+}
+
+.tableBr {
+  @media (min-width: 768px) {
+    display: none;
+  }
+}
