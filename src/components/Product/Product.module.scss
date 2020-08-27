@@ -3,8 +3,8 @@
 .default {
   background-color: $default-blue;
 
-  &:hover,
-  &:hover .weightWrapper {
+  &Hover,
+  &Hover .weightWrapper {
     background-color: $default-blue-hover;
   }
 }
@@ -12,8 +12,8 @@
 .active {
   background-color: $active-red;
 
-  &:hover,
-  &:hover .weightWrapper {
+  &Hover,
+  &Hover .weightWrapper {
     background-color: $active-red-hover;
   }
 }

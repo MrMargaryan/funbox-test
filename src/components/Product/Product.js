@@ -5,14 +5,15 @@ import styles from './Product.module.scss'
 
 const Product = ({ initialStatus, type, benefits, weight, description }) => {
   const [status, setStatus] = useState(initialStatus)
-  const [isActive, setIsActive] = useState(status === 'active')
-  const [isActiveHover, setIsActiveHover] = useState(false)
+  const [isHover, setIsHover] = useState(false)
 
   const renderBackgroundColor = (ending) => {
     return classNames(
       styles[ending],
       status === 'default' && styles.default,
+      status === 'default' && isHover && styles.defaultHover,
       status === 'active' && styles.active,
+      status === 'active' && isHover && styles.activeHover,
       status === 'disabled' && styles.disabled
     )
   }
@@ -20,31 +21,30 @@ const Product = ({ initialStatus, type, benefits, weight, description }) => {
   const renderTextStyles = (ending) => {
     return classNames(
       styles[ending],
-      ending === 'subtitle' && isActiveHover && styles.subtitleActive,
+      ending === 'subtitle' && status == 'active' && isHover && styles.subtitleActive,
       status === 'disabled' && styles.disabledContent
     )
   }
 
   const onProductClick = () => {
+    setIsHover(false)
     if (status === 'default') {
-      setIsActive(true)
+      setStatus('active')
     } else {
-      setIsActive(false)
+      setStatus('default')
     }
   }
 
   const onProductMouseLeave = () => {
-    status === 'active' && setIsActiveHover(false)
-    isActive ? setStatus('active') : setStatus('default')
+    setIsHover(false)
   }
 
   const onProductMouseEnter = () => {
-    status === 'active' && setIsActiveHover(true)
+    setIsHover(true)
   }
 
   const onBuyTextClick = () => {
     setStatus('active')
-    setIsActive(true)
   }
 
   return (
@@ -58,7 +58,7 @@ const Product = ({ initialStatus, type, benefits, weight, description }) => {
         <div className={classNames(styles.productContent, status === 'disabled' && styles.productContentDisabled)}>
           <p className={renderTextStyles('subtitle')}>
             {
-              isActiveHover
+              status === 'active' && isHover
                 ? 'Котэ не одобряет?'
                 : 'Сказочное заморское яство'
             }
